@@ -1,17 +1,18 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 module.exports = React.createClass({
 	handleForm:function(e){
 		e.preventDefault();
-		if(!this.refs.title.getDOMNode().value) return;
+		if(!this.refs.title.value) return;
 
 		var newQuestion = {
-			title: this.refs.title.getDOMNode().value,
-			description: this.refs.description.getDOMNode().value,
+			title: this.refs.title.value,
+			description: this.refs.description.value,
 			voteCount: 0,
 		}
 
-		this.refs.addQuestionForm.getDOMNode().reset();
+		this.refs.addQuestionForm.reset();
 
 		this.props.onNewQuestion( newQuestion );
 	},
