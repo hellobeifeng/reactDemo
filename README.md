@@ -20,6 +20,8 @@
 
 - [gulp-connect的使用](http://ofcss.com/2014/05/03/gulp-as-a-development-web-server-zh_cn.html)
 
+## bower
+- [简明教程](https://segmentfault.com/a/1190000002971135)
 
 
 ##bootstrap
