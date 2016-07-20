@@ -11,14 +11,14 @@ module.exports = React.createClass({displayName: "exports",
 		var questions = [
 			{
 				key: 1,
-				title:'产品经理与程序员矛盾的本质是什么？',
-				description:'理性探讨，请勿撕逼。产品经理的主要工作职责是产品设计。接受来自其他部门的需求，经过设计后交付研发。但这里有好些职责不清楚的地方。',
+				title:'李逵问焦挺',
+				description:'（李逵）坐在地下，仰着脸问道：“你这汉子姓甚名谁？”那汉（焦挺）道：“老爷没姓……”',
 				voteCount: 10,
 			},
 			{
 				key: 2,
-				title:'热爱编程是一种怎样的体验？',
-				description:'别人对玩游戏感兴趣，我对写代码、看技术文章感兴趣；把泡github、stackoverflow、v2ex、reddit、csdn当做是兴趣爱好；遇到重复的工作，总想着能不能通过程序实现自动化；喝酒的时候把写代码当下酒菜，边喝边想边敲；不给工资我也会来加班；做梦都在写代码。',
+				title:'武松',
+				description:'我实在想不出单手平地砍马头需要多大的力量，薛平一刀削三首也是在马上有冲力，武二的力量简直惊天动地——所以我想他杀潘金莲的时候一定还是有些许的不忍，或许是一丝犹豫，不然以他的力量肯定能手撕潘金莲。',
 				voteCount: 8,
 			},
 		];
@@ -71,7 +71,7 @@ module.exports = React.createClass({displayName: "exports",
 		React.createElement("div", null, 
 			React.createElement("div", {className: "jumbotron text-center"}, 
 			    React.createElement("div", {className: "container"}, 
-			      React.createElement("h1", null, "React 问答"), 
+			      React.createElement("h1", null, "水浒人物"), 
 			      React.createElement(ShowAddButton, {onToggleForm: this.onToggleForm})
 			    )
 			), 
