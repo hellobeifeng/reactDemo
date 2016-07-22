@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./lib/react.js"></script>
+    <script src='./lib/react-with-addons.js'></script>
+    <script src="./lib/react-dom.min.js"></script>
+    <script src="./lib/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var MixinsTest = React.createClass({
+        mixins: [React.addons.LinkedStateMixin],
+        getInitialState: function(){
+          return {
+            message: '我帅吗？',
+            isTrue: true
+          }
+        },
+        render: function() {
+          return (
+            <div>
+              <h2>{this.state.message}</h2>
+              <h2>你怎么认为？{this.state.isTrue? '那当然':'拉倒吧'}</h2>
+              <input type="text" valueLink={this.linkState('message')}/>
+              <br/>
+              <input type="checkbox" checkedLink={this.linkState('isTrue')}/>
+              <SubComp messageLink={this.linkState('message')} likeLink={this.linkState('isTrue')} />
+            </div>
+          )
+        }
+      });
+
+      var SubComp = React.createClass({
+        render:function(){
+          return (
+            <div>
+              <h3>这个是个子组件哦</h3>
+              // 相当于执行SubSubComp messageLink={this.props.messageLink} likeLink={this.props.likeLink} />
+              <SubSubComp {...this.props} />
+            </div>
+          )
+        }
+      });
+
+      var SubSubComp = React.createClass({
+        render:function(){
+          return (
+            <div>
+              <p>你想说什么呢</p>
+              <input type="text" valueLink={this.props.messageLink}/>
+              <br/>
+              <input type="checkbox" checkedLink={this.props.likeLink} />
+            </div>
+          )
+        }
+      });
+
+
+      var componentBox = React.render(
+        <MixinsTest />,document.getElementById('example')
+      ) 
+    </script>
+  </body>
+</html>

@@ -3,6 +3,9 @@ var gulp = require('gulp'),
   browserify = require('browserify'),
   reactify = require('reactify'),
   source = require('vinyl-source-stream'),
+  uglify = require('gulp-uglify'),
+  streamify = require('gulp-streamify'),
+  zip = require('gulp')
   port = process.env.port || 5000;
 
 gulp.task('browserify',function(){
@@ -10,6 +13,7 @@ gulp.task('browserify',function(){
     .transform(reactify)
     .bundle()
     .pipe(source('main.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest('./dist/js'))
 });
 

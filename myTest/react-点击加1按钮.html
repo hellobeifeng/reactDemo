@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.min.js"></script>
+    <script src="./lib/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var ClickApp = React.createClass({
+        getInitialState: function() {
+          return {
+            clickCount: 0
+          }
+        },
+        clickHandle: function() {
+          this.setState({
+            clickCount: this.state.clickCount + 1
+          })
+        },
+        render: function() {
+          return (
+              <div>
+                <h2>请点击下方按钮</h2>
+                <button onClick={this.clickHandle}>Click me</button>
+                <p>{this.state.clickCount}</p>
+              </div>
+            )
+        }
+      });
+
+      var ClickComponent = ReactDOM.render(
+        <ClickApp />,document.getElementById('example')
+      )
+
+    </script>
+  </body>
+</html>
+
+<scrip type="text/babel">
+<!--       var LikeButton = React.createClass({
+        getInitialState: function() {
+          return {liked: false}
+        },
+        handleClick: function(event) {
+          this.setState({
+            liked: !this.state.liked
+          })
+        },
+        render: function() {
+          var text = this.state.liked ? 'like' : 'haven\'t liked';
+          return (
+            <p onClick={this.handleClick}>You {text} this</p>
+            )
+        }
+
+              var OneComponent = React.createClass({
+        //1.创建阶段
+        getDefaultProps: function() {
+          //在创建类的时候被调用
+          console.log('getDefaultProps');
+          return {}
+        },
+
+        //2.实例化阶段
+        getInitialState: function() {
+          //获取this.state的默认值
+          console.log('getInitialState');
+          return {};
+        },
+        componentWillMount: function() {
+          //在render之前调用此方法
+          //业务逻辑的处理都应该放在这里，比如对state的操作等
+          console.log('componentWillMount')
+        },
+        render: function() {
+          //渲染并返回一个虚拟DOM
+          console.log('render');
+          return (
+              <div> hello <b> {this.props.name} </b></div>
+            )
+        },
+        componentDidMount: function() {
+          //该方法发生在render方法之后
+          //在该方法中，ReactJS会使用render方法返回的虚拟DOM对象来创建真实DOM结构
+          console.log('componentDidMount');
+        },
+
+        //3.个更新阶段
+        componentWillReceieveProps: function() {
+          //该方法发生在this.props被修改或富组件调用setProps()方法之后
+          console.log('componentWillRecieveProps');
+        },
+        shouldComponentUpdate: function() {
+          //是否需要更新
+          console.log('shouldComponentUpdate');
+          return true;
+        },
+        componentWillUpadate: function() {
+          //将要更新
+          console.log('componentWillUpadate');
+        },
+        componentDidUpdate: function() {
+          //更新完毕
+          console.log('componentDidUpdate');
+        },
+        //4.销毁阶段
+        componentWillUnmout: function() {
+          //销毁时被调用
+          console.log('componentWillUnmout');
+        }
+      })
+
+      
+      ReactDOM.render(
+      <OneComponent  name="World "/>,
+        document.getElementById('example')
+      );
+      }); -->
+</script>

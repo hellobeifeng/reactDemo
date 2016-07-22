@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.min.js"></script>
+    <script src="./lib/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var MessageBox = React.createClass({
+        getInitialState: function(){
+          return {
+            isVisiable: true,
+            titleMessage: 'Hello World !'
+          }
+        },
+        render: function(){
+          var styleObj = {
+            display : this.state.isVisiable ? 'block' : 'none'
+          }
+
+          return (
+            <div>
+              <h1 style={styleObj}>{this.state.titleMessage}</h1>
+              <Submessage/>
+            </div>
+          )
+        }
+      });
+
+      var Submessage = React.createClass({
+        render:function() {
+          return (
+            <h3>you are right !</h3>
+          )
+        }  
+      })
+
+      var componentBox = ReactDOM.render(
+        <MessageBox />,document.getElementById('example'),function(){}
+      )
+    </script>
+  </body>
+</html>

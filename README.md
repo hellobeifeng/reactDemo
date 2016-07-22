@@ -19,6 +19,8 @@
 - [gulp browserify综合使用2](https://segmentfault.com/a/1190000004002631)
 
 - [gulp-connect的使用](http://ofcss.com/2014/05/03/gulp-as-a-development-web-server-zh_cn.html)
+ 
+- http://www.imooc.com/article/1424
 
 ## bower
 - [简明教程](https://segmentfault.com/a/1190000002971135)
